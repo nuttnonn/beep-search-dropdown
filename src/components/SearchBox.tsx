@@ -1,13 +1,13 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 
 interface SearchBoxProps {
   handleSearch: (query: string) => void;
   onClick?: () => void;
+  loading?: boolean;
 }
 
-const SearchBox: React.FC<SearchBoxProps> = ({ handleSearch, onClick }) => {
+const SearchBox: React.FC<SearchBoxProps> = ({ handleSearch, onClick, loading }) => {
   const [searchTerm, setSearchTerm] = useState<string>('');
-  const inputRef = useRef<HTMLInputElement>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const query = e.target.value;
@@ -22,15 +22,19 @@ const SearchBox: React.FC<SearchBoxProps> = ({ handleSearch, onClick }) => {
   };
 
   return (
-    <input
-      type="text"
-      value={searchTerm}
-      onChange={handleChange}
-      onClick={handleClick}
-      placeholder="Type to begin searching"
-      ref={inputRef}
-      className="w-72 py-2 px-4 rounded border focus:outline-none focus:ring focus:border-blue-300 relative"
-    />
+    <>
+      <input
+        type="text"
+        value={searchTerm}
+        onChange={handleChange}
+        onClick={handleClick}
+        placeholder="Type to begin searching"
+        className="w-72 py-2 px-4 rounded border bg-white text-black shadow-md focus:outline-none focus:ring focus:border-blue-300"
+      />
+      {loading &&
+        <i className="relative h-5 w-5 inline-block animate-spin bg-amber-400" />
+      }
+    </>
   );
 };
 
