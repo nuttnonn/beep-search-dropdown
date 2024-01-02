@@ -48,7 +48,7 @@ const AsyncSearch: React.FC<AsyncSearchProps> = ({ data, onSelectedItemsChange }
     clearTimeout(typingTimer);
     typingTimer = setTimeout(() => {
       handleSearch(query);
-    }, 300);
+    }, 500);
   };
 
   const handleInputChange = (query: string) => {
@@ -86,6 +86,9 @@ const AsyncSearch: React.FC<AsyncSearchProps> = ({ data, onSelectedItemsChange }
           display
           description
         />
+      )}
+      {showDropdown && (
+        <div className="w-screen h-screen fixed top-0 left-0" onClick={() => setShowDropdown(false)}/>
       )}
     </div>
   );

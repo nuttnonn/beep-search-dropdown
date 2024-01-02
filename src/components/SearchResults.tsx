@@ -35,7 +35,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({
   };
 
   return (
-    <div className={`z-10 bg-white border rounded shadow-lg mt-2 w-72 ${className}`}>
+    <div className={`z-20 bg-white border rounded shadow-lg mt-2 w-72 ${className}`}>
       <ul className="py-1">
         {!notFound ? (
           searchResults.map((result, index) => (

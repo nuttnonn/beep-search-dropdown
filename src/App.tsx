@@ -26,10 +26,10 @@ const App: React.FC = () => {
   return (
     <div className="w-screen min-h-screen flex flex-col justify-center items-center bg-[#f3f4f6]">
       <Card className="relative flex-col">
-        <CardItem tile="Async Search" description="With description and custom results display">
+        <CardItem title="Async Search" description="With description and custom results display">
           <AsyncSearch data={mockData.currency} onSelectedItemsChange={handleSelectedItemsChange} />
         </CardItem>
-        <CardItem tile="Sync Search" description="With default display and search on focus">
+        <CardItem title="Sync Search" description="With default display and search on focus">
           <SyncSearch data={mockData.currency} onSelectedItemsChange={handleSelectedItemsChange} />
         </CardItem>
       </Card>

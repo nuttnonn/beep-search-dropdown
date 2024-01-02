@@ -22,7 +22,7 @@ const SearchBox: React.FC<SearchBoxProps> = ({ handleSearch, onClick, loading })
   };
 
   return (
-    <>
+    <div className="relative z-10">
       <input
         type="text"
         value={searchTerm}
@@ -34,7 +34,7 @@ const SearchBox: React.FC<SearchBoxProps> = ({ handleSearch, onClick, loading })
       {loading &&
         <i className="relative h-5 w-5 inline-block animate-spin bg-amber-400" />
       }
-    </>
+    </div>
   );
 };
 

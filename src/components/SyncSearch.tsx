@@ -70,6 +70,9 @@ const SyncSearch: React.FC<SyncSearchProps> = ({ data, onSelectedItemsChange }) 
           selectedItems={selectedItems}
         />
       )}
+      {showDropdown && (
+        <div className="w-screen h-screen fixed top-0 left-0" onClick={() => setShowDropdown(false)}/>
+      )}
     </div>
   );
 };
